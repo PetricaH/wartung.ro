@@ -325,7 +325,8 @@ p {
 
 .footerSectionContainer {
     display: grid;
-    gap: 20px;
+    justify-content: center;
+    gap: 10px;
     padding-top: 100px;
 }
 
@@ -335,8 +336,8 @@ p {
     padding: 20px;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    max-width: 400px;
 }
 
 .ContainerInFooter ul {
@@ -376,3 +377,33 @@ p {
     }
 }
 
+/* to top button style */
+
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 20px; /* Place the button 20px from the right */
+    z-index: 1000; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    opacity: 0; /* Initial opacity */
+    transform: translateY(20px); /* Start off-screen */
+    transition: opacity 0.5s, transform 0.5s; /* Smooth transition for opacity and position */
+}
+
+#scrollToTopBtn.show {
+    display: block; /* Show button */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide up */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}

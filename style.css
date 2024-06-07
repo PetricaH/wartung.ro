@@ -1,0 +1,276 @@
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 800
+
+.syne-<uniquifier> {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+*/
+
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Syne', sans-serif;
+    background-color: #f2f2f2;
+}
+
+::selection  {
+    background-color: #ffbf00;
+    color: #1e1e1e;
+}
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.35rem;
+    line-height: 1.5;
+}
+
+.primaryBtn {
+    position: relative;
+    background-color: #ffbf00;
+    color: #1e1e1e;
+    padding: .8em 1.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    margin-top: 50px;
+    cursor: pointer;
+    transition-duration: .4s;
+    -webkit-transition-duration: .4s;
+}
+
+.primaryBtn:active:hover {
+    transition-duration: .1s;
+    background-color: #ffbf00;
+}
+
+.primaryBtn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .5s;
+    box-shadow: 0 0 10px 40px  rgba(255, 255, 255, .3);
+}
+
+.primaryBtn:active::after {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, .3);
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+}
+
+.button:active {
+    top: 1px;
+}
+
+#topOfSiteBar {
+    position: absolute;
+    z-index: 1;
+    left: 10%;
+    top: 3%;
+}
+
+#topOfSiteBar img {
+    width: 150px;
+}
+
+#heroSection,
+#secondSection,
+#thirdSection,
+#fourthSection,
+#fifthSection,
+#sixthSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#heroSection {
+    min-height: 100vh;
+    width: 100%;
+    background: url('imagini/heroSectionBg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#heroSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(30, 30, 30, .8), rgba(30, 30, 30, .8));
+    pointer-events: none;
+}
+
+.heroSectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 2;
+}
+
+.heroSectionContainer h1, 
+.heroSectionContainer p {
+    color: #f2f2f2;
+    text-align: center;
+}
+
+#secondSection {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.secondSectionContainer {
+    color: #f2f2f2;
+    max-width: 1000px;
+}
+
+.secondSectionContainer p,
+.thirdSectionContainer p,
+.fourthSectionContainer p,
+.fifthSectionContainer p {
+    padding-bottom: 25px;
+}
+
+.secondSectionContainer ul {
+    line-height: 1.5;
+    padding-bottom: 25px;
+}
+
+.secondSectionContainer h2,
+.thirdSectionContainer h2,
+.fourthSectionContainer h2,
+.fifthSectionContainer h2 {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.secondSectionContainer,
+.thirdSectionContainer,
+.fourthSectionContainer,
+.fifthSectionContainer {  
+    z-index: 2;
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#thirdSection {
+    width: 100%;
+    position: relative;
+}
+
+#thirdSectionBgImg {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+@media (max-width:1300px) {
+    .thirdSectionContainer {
+        background-color: rgba(233, 233, 233, .5);
+        backdrop-filter: blur(50px);
+        padding: 20px;
+        border-radius: 5px;
+    }
+}
+
+#fourthSection {
+    position: relative;
+    z-index: 3;
+    background-color: #1e1e1e;
+    color: #f2f2f2;
+}
+
+.manualContainer {
+    margin-top: 50px;
+    background: url('imagini/manualContainerBg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 25px;
+    position: relative;
+}
+
+.manualSubContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.manualSubContainer > button {
+    width: fit-content;
+}
+
+.manualContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(30, 30, 30, .8), rgba(30, 30, 30, .8));
+    pointer-events: none;
+}
+
+.manualContainerText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.manualContainerText ul {
+    line-height: 2.5;
+}
